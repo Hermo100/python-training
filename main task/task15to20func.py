@@ -52,7 +52,7 @@ print(f" nhif contribution is {round(final_nhif,2)}")
 def nssf(gross_salary):
    initial_nssf=gross_salary*0.06
    if gross_salary>18000:initial_nssf=18000*0.06
-   else:initial_nssf=gross_salary*18000
+   else:initial_nssf=gross_salary*0.06
    return initial_nssf
 final_nssf=nssf(gross_salary)
 print(f" nssf contribution is {round(final_nssf,2)}")
@@ -74,7 +74,7 @@ print(f" taxable income is {round(taxable_income,2)}")
 # payee
 def paye(taxable_income):
    relief=2400
-   if (taxable_income <= 24000):payee = (taxable_income * 0.1)-relief
+   if (taxable_income <= 24000):payee = relief-relief
    elif (taxable_income>24000 and taxable_income <= 32333):payee = ((24000*0.1)+((taxable_income - 24000) * 0.25))-relief
    else:payee =((24000*0.1)+(8333*0.25)+((taxable_income - 32333) * 0.3))-relief
    return payee
